@@ -1,6 +1,12 @@
 #!/bin/bash -x
 set -e
 
+if [ ! -d $HOME/steamcmd ]; then
+  wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+  tar xf steamcmd_linux.tar.gz
+  rm steamcmd_linux.tar.gz
+fi
+
 /steamcmd/steamcmd.sh +login anonymous +force_install_dir $HOME +app_update 600760 -beta $BETA +quit
 find $HOME -name ".svn" -type d -depth -exec rm -r "{}" \;
 
