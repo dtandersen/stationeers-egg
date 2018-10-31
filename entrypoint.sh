@@ -7,7 +7,7 @@ if [ ! -d $HOME/steamcmd ]; then
   rm steamcmd_linux.tar.gz
 fi
 
-/steamcmd/steamcmd.sh +login anonymous +force_install_dir $HOME +app_update 600760 -beta $BETA +quit
+$HOME/steamcmd/steamcmd.sh +login anonymous +force_install_dir $HOME +app_update 600760 -beta $BETA +quit
 find $HOME -name ".svn" -type d -depth -exec rm -r "{}" \;
 
 mkdir -p $HOME/log
