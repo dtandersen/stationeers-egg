@@ -6,7 +6,7 @@ ENV  HOME /home/container
 ENV  BETA public
 
 RUN apt-get update && \
-  apt-get install pwgen -y && \
+  apt-get install pwgen wget lib32gcc1 -y && \
   mkdir -p $HOME && \
   adduser --disabled-password --home /home/container --no-create-home --gecos "" container && \
   chown -R container:container $HOME
