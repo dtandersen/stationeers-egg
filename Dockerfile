@@ -11,7 +11,8 @@ RUN apt-get update && \
   find $HOME -name ".svn" -type d -depth -exec rm -r "{}" \; && \
   mkdir -p /root/.config/unity3d/Rocketwerkz/rocketstation && \
   ln -s $HOME/log/Player.log /root/.config/unity3d/Rocketwerkz/rocketstation/Player.log && \
-  adduser --disabled-password --home /home/container --no-create-home --gecos "" container
+  adduser --disabled-password --home /home/container --no-create-home --gecos "" container && \
+  chown -R container:container $HOME
 
 USER container
 
