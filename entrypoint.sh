@@ -2,9 +2,12 @@
 set -e
 
 if [ ! -d $HOME/steamcmd ]; then
+  mkdir -p $HOME/steamcmd
+  cd $HOME/steamcmd
   wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
   tar xf steamcmd_linux.tar.gz
   rm steamcmd_linux.tar.gz
+  cd $HOME
 fi
 
 $HOME/steamcmd/steamcmd.sh +login anonymous +force_install_dir $HOME +app_update 600760 -beta $BETA +quit
