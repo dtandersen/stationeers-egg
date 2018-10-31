@@ -13,7 +13,8 @@ RUN apt-get update && \
   mkdir -p /root/.config/unity3d/Rocketwerkz/rocketstation && \
   ln -s $HOME/log/Player.log /root/.config/unity3d/Rocketwerkz/rocketstation/Player.log && \
   adduser --disabled-password --home /home/container --no-create-home --gecos "" container && \
-  chown -R container:container $HOME
+  chown -R container:container $HOME && \
+  chown -R container:container /steamcmd
 
 USER container
 
